@@ -30,7 +30,7 @@ router.put('/:id', restricted, (req, res)=>{
 })
 
 router.delete('/:id', restricted, (req, res)=>{
-    Courses.delete(req.params.id)
+    Courses.remove(req.params.id)
         .then(course=>res.status(200).json({deleted: course}))
         .catch(err=>{
             console.log(err);

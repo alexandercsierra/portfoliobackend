@@ -31,7 +31,7 @@ router.put('/:id', restricted, (req, res)=>{
 })
 
 router.delete('/:id', restricted, (req, res)=>{
-    Projects.delete(req.params.id)
+    Projects.remove(req.params.id)
         .then(project=>res.status(200).json({deleted: project}))
         .catch(err=>{
             console.log(err);
